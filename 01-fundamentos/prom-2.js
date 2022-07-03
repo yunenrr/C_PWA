@@ -9,9 +9,9 @@ function sumarUno(elNumero){
     return laPromesa;
 }
 
-sumarUno(5).then(elNuevoNumero => {
-    console.log(elNuevoNumero);
-    return sumarUno(elNuevoNumero);
-}).then(elNuevoNumero => {
-    console.log(elNuevoNumero);
-});
+sumarUno(5)
+    .then(elNuevoNumero => sumarUno(elNuevoNumero)) // Se modifica la estructura eliminando el function y el return
+    .then(sumarUno) // Como el valor recibido es el mismo que se envía se puede escribir de esta manera
+    .then(elNuevoNumero => {
+        console.log(elNuevoNumero);
+    });
