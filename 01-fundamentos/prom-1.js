@@ -1,7 +1,9 @@
-function sumarUno(elNumero){
-    setTimeout(function(){
-        return elNumero + 1;
+function sumarUno(elNumero, laFuncionALlamar){
+    setTimeout(function() {
+        laFuncionALlamar(elNumero + 1);
     }, 800);
 }
 
-console.log(sumarUno(5));
+sumarUno(5, function(elNuevoValor){
+    console.log(elNuevoValor); 
+});
