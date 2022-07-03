@@ -10,7 +10,8 @@ function sumarUno(elNumero){
 }
 
 sumarUno(5).then(elNuevoNumero => {
-    sumarUno(elNuevoNumero).then(elSegundoNuevoNumero => {
-        console.log(elSegundoNuevoNumero);
-    });
+    console.log(elNuevoNumero);
+    return sumarUno(elNuevoNumero);
+}).then(elNuevoNumero => {
+    console.log(elNuevoNumero);
 });
