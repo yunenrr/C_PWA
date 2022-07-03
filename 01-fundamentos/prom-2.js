@@ -9,6 +9,8 @@ function sumarUno(elNumero){
     return laPromesa;
 }
 
-sumarUno(5).then(function(elNuevoNumero){
-    console.log(elNuevoNumero);
+sumarUno(5).then(elNuevoNumero => {
+    sumarUno(elNuevoNumero).then(elSegundoNuevoNumero => {
+        console.log(elSegundoNuevoNumero);
+    });
 });
